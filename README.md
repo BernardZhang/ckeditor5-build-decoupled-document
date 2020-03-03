@@ -25,7 +25,7 @@ See:
 First, install the build from npm:
 
 ```bash
-npm install --save @ckeditor/ckeditor5-build-decoupled-document
+npm install --save @ckeditor/ckeditor5-document-editor
 ```
 
 And use it in your website:
@@ -35,7 +35,7 @@ And use it in your website:
 <div id="editor">
 	<p>This is the editor content.</p>
 </div>
-<script src="./node_modules/@ckeditor/ckeditor5-build-decoupled-document/build/ckeditor.js"></script>
+<script src="./node_modules/@ckeditor/ckeditor5-document-editor/build/ckeditor.js"></script>
 <script>
 	DecoupledEditor
 		.create( document.querySelector( '#editor' ) )
@@ -54,10 +54,10 @@ And use it in your website:
 Or in your JavaScript application:
 
 ```js
-import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import DecoupledEditor from '@ckeditor/ckeditor5-document-editor';
 
 // Or using the CommonJS version:
-// const DecoupledEditor = require( '@ckeditor/ckeditor5-build-decoupled-document' );
+// const DecoupledEditor = require( '@ckeditor/ckeditor5-document-editor' );
 
 DecoupledEditor
 	.create( document.querySelector( '#editor' ) )

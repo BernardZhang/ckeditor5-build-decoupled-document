@@ -5,7 +5,6 @@
 
 // The editor creator to use.
 import DecoupledEditorBase from '@ckeditor/ckeditor5-editor-decoupled/src/decouplededitor';
-
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
@@ -36,8 +35,18 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
+// import RestrictedEditingMode from '@ckeditor/ckeditor5-restricted-editing/src/restrictededitingmode';
+// import StandardEditingMode from '@ckeditor/ckeditor5-restricted-editing/src/standardeditingmode';
+import GFMDataProcessor from '@ckeditor/ckeditor5-markdown-gfm/src/gfmdataprocessor';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+// import EditorWatchdog from '@ckeditor/ckeditor5-watchdog/src/editorwatchdog';
 
-export default class DecoupledEditor extends DecoupledEditorBase {}
+class DecoupledEditor extends DecoupledEditorBase {}
 
 // Plugins to include in the build.
 DecoupledEditor.builtinPlugins = [
@@ -70,7 +79,16 @@ DecoupledEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	CodeBlock,
+	Highlight,
+	RemoveFormat,
+	PageBreak,
+	// RestrictedEditingMode,
+	// StandardEditingMode,
+	GFMDataProcessor,
+	SpecialCharacters,
+	Font
 ];
 
 // Editor configuration.
@@ -97,14 +115,20 @@ DecoupledEditor.defaultConfig = {
 			'indent',
 			'outdent',
 			'|',
+			'specialCharacters',
 			'link',
+			'pageBreak',
 			'blockquote',
 			'imageUpload',
+			'codeBlock',
 			'insertTable',
 			'mediaEmbed',
 			'|',
+			// 'restrictedEditingException',
 			'undo',
-			'redo'
+			'redo',
+			'highlight',
+			'removeformat'
 		]
 	},
 	image: {
@@ -131,3 +155,6 @@ DecoupledEditor.defaultConfig = {
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };
+
+// export default new EditorWatchdog( DecoupledEditor );
+export default DecoupledEditor;
